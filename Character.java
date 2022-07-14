@@ -3,26 +3,31 @@ public class Character {
     public int health, mana;
     public String[] inventory;
 
-    public Character(){};
-
-    public Character(String userName, int health, int mana) {
+    public Character(String userName) { // Character details
         this.userName = userName;
-        this.health = health;
-        this.mana = mana;
+        this.health = 100;
+        this.mana = 100;
         this.inventory = new String[100];
-        this.inventory[0] = "Torch";
-        this.inventory[1] = "Momento";
+        this.inventory[0] = "Sword";
     }
 
-    public void getStatus() {
+    public void getStatus() {  // Get full character status
         System.out.printf("Character name: %s\n", userName);
         System.out.printf("Health: %d\n", health);
         System.out.printf("Mana:  %d\n", mana);
         System.out.printf("Inventory: ");
         for (int i = 0; i < inventory.length; i++) {
             if (inventory[i] != null) {
-                System.out.printf("%s, ", inventory[i]);
+                System.out.printf("%d:%s ", i + 1, inventory[i]);
             }
         }
+    }
+    
+    public void takeDamage(int damage) { // Method to take damage
+        health = health - damage;
+    }
+
+    public void healDamage(int heal) {  // Method to heal damage
+        health = health + heal;
     }
 }
