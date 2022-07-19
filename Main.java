@@ -1,30 +1,17 @@
 public class Main {
     public static void main(String[] args) {
-        Dice dice = new Dice();
+    Ptest player = new Ptest("Harzinn");
+    
+    int target = 10;
+    int attack;
 
-        System.out.println("D20 Test");
-        for (int i = 1; i <= 10; i++) {
-            System.out.printf("%2d: %2d  ", i, dice.d20());
+    System.out.println();
+    while (target > 0) {
+        System.out.printf("\nCurrent target HP: %d", target);
+        attack = player.pAttack();
+        System.out.printf("\nYou attacked target for %d damage!", attack);
+        target = target - attack;
         }
-
-        System.out.println("\nD12 Test");
-        for (int i = 1; i <= 10; i++) {
-            System.out.printf("%2d: %2d  ", i, dice.d12());
-        }
-
-        System.out.println("\nD10 Test");
-        for (int i = 1; i <= 10; i++) {
-            System.out.printf("%2d: %2d  ", i, dice.d10());
-        }
-
-        System.out.println("\nD8 Test");
-        for (int i = 1; i <= 10; i++) {
-            System.out.printf("%2d: %2d  ", i, dice.d8());
-        }
-
-        System.out.println("\nD4 Test");
-        for (int i = 1; i <= 10; i++) {
-            System.out.printf("%2d: %2d  ", i, dice.d4());
-        }
+            System.out.println("\n\nTarget has been defeated");
     }
 }
