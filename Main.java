@@ -1,26 +1,30 @@
-import java.util.*;
-
 public class Main {
     public static void main(String[] args) {
-        Scanner stdin = new Scanner(System.in);
-        createCharacter(stdin);
-        
-        // Cleanup scanner
-        stdin.close();
-    }
+        Dice dice = new Dice();
 
-    private static void createCharacter(Scanner stdin) {
-        String userName;
+        System.out.println("D20 Test");
+        for (int i = 1; i <= 10; i++) {
+            System.out.printf("%2d: %2d  ", i, dice.d20());
+        }
 
-        // Take username and create a character
-        System.out.print("Please enter character name: ");
-        userName = stdin.nextLine();
+        System.out.println("\nD12 Test");
+        for (int i = 1; i <= 10; i++) {
+            System.out.printf("%2d: %2d  ", i, dice.d12());
+        }
 
-        Character player = new Character(userName); // Create new character object
+        System.out.println("\nD10 Test");
+        for (int i = 1; i <= 10; i++) {
+            System.out.printf("%2d: %2d  ", i, dice.d10());
+        }
 
-        System.out.println(); // Add a blank line
-        player.getStatus();   // Get character status
-        System.out.println(); // Add a blank line
-        System.out.println(); // Add a blank line
+        System.out.println("\nD8 Test");
+        for (int i = 1; i <= 10; i++) {
+            System.out.printf("%2d: %2d  ", i, dice.d8());
+        }
+
+        System.out.println("\nD4 Test");
+        for (int i = 1; i <= 10; i++) {
+            System.out.printf("%2d: %2d  ", i, dice.d4());
+        }
     }
 }
